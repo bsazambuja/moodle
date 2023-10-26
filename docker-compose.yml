@@ -1,4 +1,7 @@
 version: '2'
+networks:
+  moodle-network:
+    driver: bridge
 services:
   mariadb-moodle:
     image: docker.io/bitnami/mariadb:11.1
