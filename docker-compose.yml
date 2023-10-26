@@ -18,7 +18,9 @@ services:
   moodle:
     image: docker.io/bitnami/moodle:4.3
     networks:
-      - moodle-network  
+      - moodle-network
+     links:
+       - mariadb
     #network_mode: bridge
     ports:
       - '8080:8080'
