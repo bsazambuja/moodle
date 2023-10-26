@@ -1,7 +1,8 @@
 version: '2'
 services:
-  mariadb:
+  mariadb-moodle:
     image: docker.io/bitnami/mariadb:11.1
+    container_name: mariadb-moodle
     networks:
       - moodle-network  
     #network_mode: bridge
@@ -20,7 +21,7 @@ services:
     networks:
       - moodle-network
      links:
-       - mariadb
+       - mariadb-moodle
     #network_mode: bridge
     ports:
       - '8080:8080'
@@ -36,7 +37,7 @@ services:
       - 'moodle_data:/bitnami/moodle'
       - 'moodledata_data:/bitnami/moodledata'
     depends_on:
-      - mariadb
+      - mariadb-moodle
 
 volumes:
   mariadb_data:
