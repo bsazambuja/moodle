@@ -14,8 +14,8 @@ services:
 
   moodle:
     image: 'bitnami/moodle:3'
-    container_name: moodle
     network_mode: bridge
+    container_name: moodle
     environment:
       MOODLE_USERNAME: programster
       MOODLE_PASSWORD: thisIsMyMoodleLoginPassword
@@ -27,8 +27,8 @@ services:
       MOODLE_DATABASE_PASSWORD: moodlePassword
       ALLOW_EMPTY_PASSWORD: "no"
     ports:
-      - '80:8080'
-      - '443:8443'  
+      - '80:80'
+      - '443:443'
     volumes:
       - $HOME/volumes/moodle:/bitnami'
     depends_on:
