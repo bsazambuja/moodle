@@ -1,7 +1,4 @@
 version: '2'
-networks:
-  moodle-network:
-    driver: bridge
 services:
   mariadb-moodle:
     image: docker.io/bitnami/mariadb:11.1
@@ -21,8 +18,6 @@ services:
 
   moodle:
     image: docker.io/bitnami/moodle:4.3
-    networks:
-      - moodle_moodle-network
     #network_mode: bridge
     ports:
       - '8080:8080'
