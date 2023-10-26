@@ -2,7 +2,6 @@ version: '2'
 services:
   mariadb:
     image: 'mariadb:10'
-    network_mode: bridge
     container_name: db
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 1
@@ -14,7 +13,6 @@ services:
 
   moodle:
     image: 'bitnami/moodle:3'
-    network_mode: bridge
     container_name: moodle
     environment:
       MOODLE_USERNAME: programster
