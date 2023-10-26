@@ -3,8 +3,6 @@ services:
   mariadb-moodle:
     image: docker.io/bitnami/mariadb:11.1
     container_name: mariadb-moodle
-    networks:
-      - moodle_moodle-network
     #network_mode: bridge
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
